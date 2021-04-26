@@ -1,6 +1,6 @@
 # sqlite-forward-migrations
 
-A rudimentary forward-only database migration tool for NodeJS and Postgresql.
+A rudimentary forward-only database migration tool for NodeJS and SQLite.
 
 ## How This Works, In a Nutshell
 
