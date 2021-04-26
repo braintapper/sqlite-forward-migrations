@@ -1,0 +1,5 @@
+{
+    "migrationPath": "../db/migrations",
+    "migrationTable": "_migrations",
+    "databasePath": "../db/test.db"
+}
