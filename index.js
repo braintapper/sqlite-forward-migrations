@@ -80,8 +80,9 @@ SQLiteForwardMigration = (function() {
       that.executed_migrations.forEach(function(executed_migration) {
         return that.queued_migrations.remove(function(file_migration) {
           if (file_migration.script_filename === executed_migration.script_filename) {
-            return console.log(chalk.gray(`${executed_migration.script_filename} already executed. Skipping`));
+            console.log(chalk.gray(`${executed_migration.script_filename} already executed. Skipping`));
           }
+          return file_migration.script_filename === executed_migration.script_filename;
         });
       });
       that.queued_migrations.forEach(function(currentMigration) {

@@ -13,7 +13,8 @@ console.log(chalk.yellow("Reset database"));
 
 config = fs.readJsonSync("./config.json");
 
-resetSql = fs.readFileSync("./reset.sql").toString();
+// reset file is just a bunch of drop table statements (including dropping _migrations) to clear out database
+resetSql = fs.readFileSync("../db/reset.sql").toString();
 
 client = new db(config.databasePath);
 

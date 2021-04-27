@@ -101,10 +101,10 @@ class SQLiteForwardMigration
 
     console.log chalk.gray("Cleaning up executed migrations from queue...")
     that.executed_migrations.forEach (executed_migration)->
-       that.queued_migrations.remove (file_migration)->
-         if (file_migration.script_filename == executed_migration.script_filename)
-           console.log chalk.gray("#{executed_migration.script_filename} already executed. Skipping")
-    
+      that.queued_migrations.remove (file_migration)->
+        if (file_migration.script_filename == executed_migration.script_filename)
+          console.log chalk.gray("#{executed_migration.script_filename} already executed. Skipping")
+        return (file_migration.script_filename == executed_migration.script_filename)
 
 
 
